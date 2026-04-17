@@ -21,7 +21,7 @@ Overall, Cynex is designed to be fast, easy to use, and hopefully fast to learn.
 ---------------------------------------------------------------------------------
 If you find a bug that has not been reported, request a pull, make your changes, then contact me to review and merge them.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Do NOT use ANY platform specific code, as Cynex will be cross platform.
 >
 > If you NEED to use platform specific code, use ifdef checks.
