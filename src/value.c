@@ -5,7 +5,7 @@
 #include <math.h>
 #include "value.h"
 
-/* ---------- Utilities ---------- */
+// Utilities
 static char* xstrdup(const char* s) {
     if (!s) return NULL;
     size_t n = strlen(s) + 1;
@@ -18,7 +18,7 @@ static char* xstrdup(const char* s) {
     return r;
 }
 
-/* ---------- Value constructors ---------- */
+// Value constructors
 Value make_number(double d) {
     Value v = { VAL_NUMBER, d, NULL };
     return v;
@@ -29,7 +29,7 @@ Value make_string(const char* s) {
     return v;
 }
 
-/* ---------- Cleanup ---------- */
+// Cleanup
 void free_value(Value* v) {
     if (!v) return;
     if (v->type == VAL_STRING && v->string) {
@@ -40,7 +40,7 @@ void free_value(Value* v) {
     v->string = NULL;
 }
 
-/* ---------- Conversions ---------- */
+// Conversions
 int value_to_number(const Value* v, double* out) {
     if (v->type == VAL_NUMBER) {
         *out = v->number;
@@ -66,7 +66,7 @@ char* value_to_cstring(const Value* v) {
     return xstrdup(buf);
 }
 
-/* ---------- Arithmetic ---------- */
+// Arithmetic
 Value binary_arith(Value a, Value b, char op) {
     double n1 = 0, n2 = 0;
     if (!value_to_number(&a, &n1) || !value_to_number(&b, &n2)) {
@@ -82,7 +82,7 @@ Value binary_arith(Value a, Value b, char op) {
     }
 }
 
-/* ---------- Truthiness ---------- */
+// Truthiness
 int is_truthy(const Value* v) {
     if (!v) return 0;
 
@@ -94,5 +94,5 @@ int is_truthy(const Value* v) {
         return v->string && v->string[0] != '\0';   // empty string = false
     }
 
-    return 1;   // future types (tables, functions...) should and will be truthy
+    return 1;   // future types (tables, functions...) should be truthy
 }
