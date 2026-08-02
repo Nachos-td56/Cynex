@@ -19,6 +19,6 @@ extern VarEntry vars[MAX_VARS];   // keep it global for now
 VarEntry* find_var(const char* name);
 VarEntry* create_var(const char* name);
 
-void free_all_variables(void);    // for cleanup at exit — optional but nice
+void free_all_variables(void);    // for cleanup at exit, optional but nice
 
 #endif /* CYNEX_VARIABLE_H */
