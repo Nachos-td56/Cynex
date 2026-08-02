@@ -14,6 +14,6 @@ void cynex_sleep(int ms)
 #ifdef _WIN32
     Sleep((DWORD)ms);
 #else
-    usleep((unsigned int)(ms * 1000));   /* usleep uses microseconds */
+    usleep((unsigned int)(ms * 1000));   // usleep uses microseconds. thanks linux
 #endif
 }
