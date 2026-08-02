@@ -17,7 +17,7 @@ VarEntry* find_var(const char* name) {
 
 VarEntry* create_var(const char* name) {
     VarEntry* v = find_var(name);
-    if (v) return v;   // already exists -> reuse
+    if (v) return v;   // already exists, reuse
 
     for (int i = 0; i < MAX_VARS; i++) {
         if (!vars[i].used) {
