@@ -3,7 +3,7 @@
 #define CYNEX_PARSER_H
 
 #include "lexer.h"
-#include "value.h"
+#include "CYNB/bytecode.h"
 
 typedef struct {
     Lexer lx;
@@ -11,18 +11,11 @@ typedef struct {
 
 void parser_init(Parser* p, const char* s);
 
-// Forward declarations of expression levels
-Value parse_concat(Parser* p, int* printed);
-Value parse_additive(Parser* p, int* printed);
-Value parse_term(Parser* p, int* printed);
-Value parse_factor(Parser* p, int* printed);
-Value parse_primary(Parser* p, int* printed);
+// Compile the current source into a BytecodeChunk (caller owns it)
+int  compile(Parser* p, BytecodeChunk* out);
 
-// Statement level
-void parse_statement(Parser* p);
-
-// Helpers
+// Helpers still used internally
 int accept(Parser* p, TokenType t);
 int expect(Parser* p, TokenType t, const char* errmsg);
 
-#endif /* CYNEX_PARSER_H */
+#endif
