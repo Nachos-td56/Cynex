@@ -38,7 +38,7 @@ void lexer_next(Lexer* lx) {
         return;
     }
 
-    // Identifiers (and keywords like true/false/print/if/then/end/local/string/int)
+    // Identifiers (and keywords like true/false/print/if/then/end/local/string/int) why did i type all this
     if (isident_start((unsigned char)c)) {
         size_t i = 0;
         while (lx->src[lx->pos] && isident_body((unsigned char)lx->src[lx->pos])) {
