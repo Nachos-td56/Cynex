@@ -25,3 +25,10 @@ If you find a bug that has not been reported, request a pull, make your changes,
 > Do NOT use ANY platform specific code, as Cynex will be cross platform.
 >
 > If you NEED to use platform specific code, use ifdef checks.
+
+
+---------------------------------------------------------------------------------
+# THIRD PARTY SOFTWARE
+---------------------------------------------------------------------------------
+> [!NOTE]
+> If any third party software is used, the software and their license will be in third_party_softwares.txt
