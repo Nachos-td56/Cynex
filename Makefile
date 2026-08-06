@@ -3,7 +3,7 @@
 # ================================================
 
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
+CFLAGS = -Wall -Wextra -std=gnu99
 
 # Release flags
 
