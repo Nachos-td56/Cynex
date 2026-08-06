@@ -26,7 +26,7 @@ SRC = src/main.c \
       src/CYNB/vm.c
 
 OBJ = $(SRC:.c=.o)
-TARGET = cynex
+TARGET = Cynex
 
 # Default = Release flags/build
 all: CFLAGS += $(RELEASE_FLAGS)
